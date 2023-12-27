@@ -1,0 +1,126 @@
+/* Base & Reset */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+:root {
+    --purple: #7429C6;
+    --pink: #1b03f5;
+    --dark-pink: #08e6da;
+    --blue: #0f5cd8;
+    --lighter-gray: #97A3B6;
+    --white: #f6fa06;
+    --dark: #030616;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-image: url('./assets/bg-guess-the-word.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+body, .container, .details, .input-container, .btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button, input {
+    cursor: pointer;
+    border: transparent;
+    background: transparent;
+    outline: none;
+    border-radius: 6px;
+}
+
+input {
+    border: 2px solid var(--blue);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: .3s ease;
+}
+
+input:hover, input:active, input:focus {
+    border: 3px solid var(--dark-pink);
+}
+
+button {
+    color: var(--white);
+    background-color: var(--pink);
+	box-shadow: 0px 5px 0px 0px var(--dark-pink);
+    padding: 8px 1rem;
+}
+
+span {
+    color: var(--lighter-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.attemps {
+    color: var(--lighter-blue);
+}
+
+/* Styles */
+
+.container {
+    background-color: var(--dark);
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    background-image: linear-gradient(to right bottom, #030616, #181c28, #282e3c);
+    width: 35%;
+    flex-direction: column;
+    gap: 1rem;
+    /* background-image: linear-gradient(to right bottom, #030616, #181c28, #282e3c, #384151, #4a5567); */
+}
+
+.word {
+    color: var(--lighter-blue);
+    background-color: var(--blue);
+	box-shadow: 0px 4px 0px 0px var(--dark);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+    font-size: 1.6rem;
+    font-weight: 700;
+    height: 40px;
+    letter-spacing: 10px;
+}
+
+.details, .btn-container {
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.details {
+    color: var(--blue);
+    flex-wrap: wrap;
+}
+.typing-word {
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+}
+
+.input-container {
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        width: 80%;
+    }
+}
